@@ -1,18 +1,22 @@
-const express = require('express')
+const express = require('express');
 
-const suppliersRouter = require('../suppliers/suppliersRouter');
-const productsRouter = require('../products/productsRouter');
+const productsRouter = require('../products/products-router.js');
+const suppliersRouter = require('../suppliers/suppliers-router.js');
 
 const server = express();
 
-//global middleware waaaat
+// global middleware
 server.use(express.json());
+// server.use(uppercaser); // using custom middleware globally
 
+// we can use middleware locally
 server.use('/products', productsRouter);
-server.use('/suppliers', suppliersRouter)
+server.use('/suppliers', suppliersRouter);
 
+// route handlers
 server.get('/', (req, res) => {
-    res.status(200).json({ api: 'up...'})
-})
+  res.status(200).json({ api: 'up' });
+});
 
-module.exports = server
+// export default server;
+module.exports = server;
