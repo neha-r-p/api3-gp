@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/neha-r-p/api3-gp#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "nodemon": "^1.19.2"
   }
 }
